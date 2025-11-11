@@ -25,7 +25,7 @@ Open your browser and go to: [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## 📁 Project Structure!!!
+## 📁 Project Structure
 
 ```
 JDE FINANCIAL/

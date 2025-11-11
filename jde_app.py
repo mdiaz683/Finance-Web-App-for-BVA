@@ -20,9 +20,6 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
-
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
     
 
 BUInfo = namedtuple("BUInfo", ["business_unit", "responsible", "department"])
@@ -623,51 +620,6 @@ with st.sidebar:
             if uploaded_file and uploaded_file2:
                 file_bytes = uploaded_file.getvalue()
                 file2_bytes = uploaded_file2.getvalue()
-        
-        else:  # SharePoint - Auto load
-            st.info("📂 Files will be loaded from SharePoint automatically")
-            
-            if st.button("📥 Load files from SharePoint", type="primary", use_container_width=True):
-                with st.spinner("🔄 Downloading files from SharePoint..."):
-                    try:
-                        import requests
-                        
-                        # Get URLs from secrets
-                        sharepoint_url1 = st.secrets["SHAREPOINT_FILE1_URL"]
-                        sharepoint_url2 = st.secrets["SHAREPOINT_FILE2_URL"]
-                        
-                        # Download files
-                        response1 = requests.get(sharepoint_url1, timeout=60)
-                        response2 = requests.get(sharepoint_url2, timeout=60)
-                        
-                        if response1.status_code == 200 and response2.status_code == 200:
-                            # Store in session state
-                            st.session_state.file_bytes = response1.content
-                            st.session_state.file2_bytes = response2.content
-                            st.session_state.files_loaded = True
-                            st.success("✅ Files loaded successfully from SharePoint!")
-                            st.rerun()
-                        else:
-                            st.error(f"❌ Error downloading files. Status codes: {response1.status_code}, {response2.status_code}")
-                            st.error("💡 Check that the SharePoint links in secrets.toml are correct and have download permissions")
-                            st.stop()
-                            
-                    except KeyError as e:
-                        st.error(f"❌ Missing configuration: {e}")
-                        st.error("💡 Make sure SHAREPOINT_FILE1_URL and SHAREPOINT_FILE2_URL are in your secrets.toml")
-                        st.stop()
-                    except Exception as e:
-                        st.error(f"❌ Error: {str(e)}")
-                        st.stop()
-            
-            # If files were loaded from SharePoint in previous run
-            if st.session_state.get('files_loaded', False):
-                st.success("✅ Files loaded from SharePoint")
-                # Set flag variables
-                uploaded_file = True
-                uploaded_file2 = True
-                file_bytes = st.session_state.file_bytes
-                file2_bytes = st.session_state.file2_bytes
 
     # Process files if available from manual upload
     if file_source == "Upload manually" and uploaded_file and uploaded_file2:

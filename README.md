@@ -1,11 +1,11 @@
 
-# 📊 JDE Financial App
+# Financial App
 
 This project contains a **Streamlit-based financial dashboard** to visualize and interact with budget and actuals (BvA) data from a corporate finance database. 
 
 The app loads financial Excel reports and displays summary and detailed views for decision-making.
 
-## 🧭 Overview
+## Overview
 
 Below is a preview of the Streamlit dashboard:
 

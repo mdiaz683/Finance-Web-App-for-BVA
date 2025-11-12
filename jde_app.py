@@ -1182,19 +1182,6 @@ else:
            - **Summary Comparison**: Overview with metrics and charts
            - **Bva Group Details**: All transactions for Actual and Plan
            - **Side-by-Side Analysis**: Specific analysis of one BVA group
-        
-        ### Expected file structure:
-        
-        **Budget File:**
-        - Must contain sheets starting with "BvA" (e.g., "BvA Ster Assurance 1110551")
-        - Business Unit in cell C6 of the BvA sheet
-        - Months in row 12 (columns ET to FE)
-        - BVA groups starting at row 13 (column ES)
-        
-        **Actual Data File:**
-        - Must contain sheet "Data Base" with transaction details
-        - Columns: Business Unit, JDE Account, Amount, Month, Account Name, BVA group, etc.
-        """)
 
 st.markdown("---")
 st.markdown("*Budget Analysis Dashboard v1.2 - Optimized*")

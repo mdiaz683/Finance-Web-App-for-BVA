@@ -1181,7 +1181,7 @@ else:
         4. **Choose view**:
            - **Summary Comparison**: Overview with metrics and charts
            - **Bva Group Details**: All transactions for Actual and Plan
-           - **Side-by-Side Analysis**: Specific analysis of one BVA group
+           - **Side-by-Side Analysis**: Specific analysis of one BVA group""")
 
 st.markdown("---")
 st.markdown("*Budget Analysis Dashboard v1.2 - Optimized*")

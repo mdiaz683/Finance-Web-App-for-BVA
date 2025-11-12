@@ -5,7 +5,12 @@ This project contains a **Streamlit-based financial dashboard** to visualize and
 
 The app loads financial Excel reports and displays summary and detailed views for decision-making.
 
----
+## 🧭 Overview
+
+Below is a preview of the Streamlit dashboard:
+
+![App Overview](img.png)
+
 
 ## 🚀 How to Run the App
 

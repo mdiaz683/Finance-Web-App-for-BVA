@@ -5,6 +5,8 @@ This project contains a **Streamlit-based financial dashboard** to visualize and
 
 The app loads financial Excel reports and displays summary and detailed views for decision-making.
 
+You can access the app here: [[http://localhost:8501](https://bva-finance.streamlit.app/)](https://bva-finance.streamlit.app/))
+
 ## Overview
 
 Below is a preview of the Streamlit dashboard:
